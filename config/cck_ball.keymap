@@ -61,7 +61,7 @@
             layers = <0>;
         };
 
-        toggle_bt_layer {
+        temporal_bt_layer {
             bindings = <&mo 2>;
             key-positions = <53 54>;
             timeout-ms = <350>;
@@ -69,19 +69,10 @@
         };
 
         win_lock {
-            bindings = <&win_lock>;
+            bindings = <&kp LG(L)>;
             key-positions = <51 52 53>;
             timeout-ms = <350>;
             layers = <0>;
-        };
-    };
-
-    macros {
-        win_lock: win_lock {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_WIN &kp L>;
-            label = "WIN_LOCK";
         };
     };
 
@@ -149,7 +140,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
