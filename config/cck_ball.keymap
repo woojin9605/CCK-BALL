@@ -87,7 +87,7 @@
 
         en_ko {
             bindings = <&kp RIGHT_ALT>;
-            key-positions = <42 43 44>;
+            key-positions = <43 44 45>;
             timeout-ms = <350>;
             layers = <0>;
         };
