@@ -45,7 +45,7 @@
 		label = "LEFT_ENCODER";
 		a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		b-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		steps = <96>;
+		steps = <12>;
 	};
 
 	right_encoder: encoder_right {
@@ -54,13 +54,13 @@
 		label = "RIGHT_ENCODER";
 		a-gpios = <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		b-gpios = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		steps = <96>;
+		steps = <12>;
 	};
 
 	sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder &right_encoder>;
-		triggers-per-rotation = <24>;
+		triggers-per-rotation = <12>;
 	};
 
     };
