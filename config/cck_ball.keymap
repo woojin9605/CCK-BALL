@@ -48,6 +48,28 @@
         tap-ms = <100>;
     };
 
+    mouse_holdtap: mouse_holdtap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "MOUSE_HOLDTAP";
+        bindings = <&mo>, <&tog>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <130>;
+        flavor = "hold-preferred";
+    };
+
+    hm: homerow_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        quick-tap-ms = <130>;
+        flavor = "tap-preferred";
+    };
+
     behaviors {
     };
 
@@ -81,11 +103,11 @@
 
         QWERTY {
             bindings = <
-&kp ESC         &kp N1        &kp N2        &kp N3  &kp N4     &kp N5  &kp N6  &kp N7     &kp N8     &kp N9          &kp N0          &kp BACKSPACE
-&kp TAB         &kp Q         &kp W         &kp E   &kp R      &kp T   &kp Y   &kp U      &kp I      &kp O           &kp P           &kp BSLH
-&kp LCTRL       &kp A         &lt 4 S       &kp D   &lt 3 F    &kp G   &kp H   &kp J      &kp K      &kp L           &kp SEMI        &kp SQT
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C   &kp V      &kp B   &kp N   &kp M      &kp COMMA  &kp DOT         &kp UP_ARROW    &kp FSLH
-&kp CAPSLOCK    &kp LEFT_WIN  &kp LEFT_ALT  &tog 5  &kp SPACE  &mo 1   &mo 1   &kp SPACE  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp ESC         &kp N1        &kp N2        &kp N3              &kp N4     &kp N5  &kp N6  &kp N7     &kp N8     &kp N9          &kp N0          &kp BACKSPACE
+&kp TAB         &kp Q         &kp W         &kp E               &kp R      &kp T   &kp Y   &kp U      &kp I      &kp O           &kp P           &kp BSLH
+&kp LCTRL       &kp A         &lt 4 S       &kp D               &lt 3 F    &kp G   &kp H   &kp J      &kp K      &kp L           &kp SEMI        &kp SQT
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C               &kp V      &kp B   &kp N   &kp M      &kp COMMA  &kp DOT         &kp UP_ARROW    &kp FSLH
+&kp CAPSLOCK    &kp LEFT_WIN  &kp LEFT_ALT  &mouse_holdtap 5 5  &kp SPACE  &mo 1   &mo 1   &kp SPACE  &kp ENTER  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
             >;
 
             sensor-bindings =
@@ -140,7 +162,7 @@
 
             sensor-bindings =
                 <&scroll_vertical_encoder>,
-                // 编码器1：上下滚动,,,,,,,,,,,,,,,,
+                // 编码器1：上下滚动,,,,,,,,,,,,,,,,,
                 <&scroll_horizontal_encoder>;
 
             // 编码器2：左右滚动
