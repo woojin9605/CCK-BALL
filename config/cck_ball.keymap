@@ -110,6 +110,11 @@
             bindings = <&kp ENTER>;
             key-positions = <34 33>;
         };
+
+        enter_2 {
+            bindings = <&kp ENTER>;
+            key-positions = <34 35>;
+        };
     };
 
     keymap {
