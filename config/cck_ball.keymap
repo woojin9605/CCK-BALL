@@ -92,9 +92,9 @@
             layers = <0>;
         };
 
-        temporal_bt_layer {
+        bt_1 {
             bindings = <&mo 2>;
-            key-positions = <53 54>;
+            key-positions = <53 52>;
             timeout-ms = <350>;
             layers = <0>;
         };
@@ -114,6 +114,13 @@
         enter_2 {
             bindings = <&kp ENTER>;
             key-positions = <34 35>;
+        };
+
+        bt_2 {
+            bindings = <&mo 2>;
+            key-positions = <54 55>;
+            timeout-ms = <350>;
+            layers = <0>;
         };
     };
 
